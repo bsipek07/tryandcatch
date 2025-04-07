@@ -5,22 +5,20 @@ public class Main {
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
-        String broj;
-        double num;
-        int f=1;
+        boolean notNum=true;
 
-        while(f==1)
+        while(notNum)
         {
             try{
-                System.out.println("Unesite broj");
-                broj = input.nextLine();
-                num= Double.valueOf(broj);
+                System.out.println("Unesite broj:");
+                String broj = input.nextLine();
+                double num= Double.valueOf(broj);
                 if(Double.valueOf(broj)<=0 || Double.valueOf(broj)>=0){
-                    f=0;
+                    notNum=false;
                     System.out.println("Unijeli ste broj "+num);
                 }
             }catch (NumberFormatException e){
-                System.out.println("Niste unijeli broj");
+                System.out.println("Niste unijeli broj.");
             }
 
 
