@@ -5,16 +5,16 @@ public class Main {
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
-        boolean notNum=true;
+        boolean notNum=false;
 
-        while(notNum)
+        while(!notNum)
         {
             try{
                 System.out.println("Unesite broj:");
                 String broj = input.nextLine();
                 double num= Double.valueOf(broj);
                 if(Double.valueOf(broj)<=0 || Double.valueOf(broj)>=0){
-                    notNum=false;
+                    notNum=true;
                     System.out.println("Unijeli ste broj "+num);
                 }
             }catch (NumberFormatException e){
