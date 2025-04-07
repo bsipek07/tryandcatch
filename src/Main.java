@@ -7,33 +7,23 @@ public class Main {
         Scanner input = new Scanner(System.in);
         String broj;
         double num;
+        int f=1;
 
-        try{
-            System.out.println("Unesite broj");
-            broj = input.next();
-            Double.valueOf(broj);
-
-        }catch (NumberFormatException e){
-            int f=1;
-            while(f==1){
-                try {
-                    broj = input.next();
-                    System.out.println("Unesite broj:");
-                    if(Double.valueOf(broj)<=0 || Double.valueOf(broj)>=0){
-                        f=0;
-                         num = Double.valueOf(broj);
-                    }
+        while(f==1)
+        {
+            try{
+                System.out.println("Unesite broj");
+                broj = input.nextLine();
+                num= Double.valueOf(broj);
+                if(Double.valueOf(broj)<=0 || Double.valueOf(broj)>=0){
+                    f=0;
+                    System.out.println("Unijeli ste broj "+num);
                 }
-                catch (NumberFormatException e1){
-                    System.out.println("Nije unesen broj.");
-                }
-
+            }catch (NumberFormatException e){
+                System.out.println("Niste unijeli broj");
             }
 
-        }finally {
-            System.out.println("Uneseni broj je"+num);
+
         }
-
-
     }
 }
